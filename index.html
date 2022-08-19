@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>우영우 별명 짓기</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="/src/img/icon.png"/>
+  <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 <body>
   <div id="wrap">
@@ -13,6 +14,7 @@
     <form id="nameForm">
       <input type="text" placeholder="이름을 입력하고 시작하세요!" required/>
       <input id="submit" type="submit" value="나의 별명 보기 ✅"/>
+      <input class="hidden" id="submit" type="submit" value="다시 한번 하기 🐬"/>
     </form>
     <div id="result">
       <div id="yourNameIs"></div>
@@ -20,8 +22,7 @@
       <span id="nickname"></span>
       <span id="name"></span>
     </div>
-    <button id="retry">다시 한번 하기 🐬</button>
   </div>
-  <script src="nickname.js"></script> 
+  <script src="/src/js/nickname.js"></script> 
 </body>
 </html>

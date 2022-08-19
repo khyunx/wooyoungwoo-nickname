@@ -105,33 +105,46 @@ const nicknameList = [
 ];
 
 const nameForm = document.querySelector("#nameForm");
-const nameInput = nameForm.querySelector("input");
+const nameInput = nameForm.querySelector("input:first-child");
+const submitBtn = nameForm.querySelector("input:nth-child(2)");
+const retryBtn = nameForm.querySelector("input:last-child");
 const nicknameSpace = document.querySelector("#nickname");
 const nameSpace = document.querySelector("#name");
 const yourNameIs = document.querySelector("#yourNameIs");
 const countDown = document.querySelector("#countDown");
-const retry = document.querySelector("#retry");
 
 const makeNickName = (e) => {
   e.preventDefault();
+  if (nicknameSpace.innerText) {
+    yourNameIs.innerText = "";
+    nicknameSpace.innerText = "";
+    nameSpace.innerText = "";
+  }
   const name = nameInput.value;
   const nickname =
     nicknameList[Math.floor(Math.random() * nicknameList.length)];
   let time = 4;
-  setInterval(() => {
+  const interval = setInterval(() => {
     yourNameIs.innerText = "당신의 별명은!!";
     time -= 1;
     countDown.innerText = time;
-    if (time <= 0) {
-      countDown.innerText = "";
-    }
   }, 1000);
-
   setTimeout(() => {
     nicknameSpace.innerText = nickname;
     nameSpace.innerText = name;
+    countDown.innerText = "";
+    if (retryBtn.classList.contains("hidden")) {
+      retryBtn.classList.remove("hidden");
+      submitBtn.classList.add("hidden");
+    }
+    clearInterval(interval);
   }, 4000);
 };
 
+const retrySubmit = (e) => {
+  e.preventDefault();
+
+  makeNickName();
+};
+
 nameForm.addEventListener("submit", makeNickName);
-retry.addEventListener("click", makeNickName);
