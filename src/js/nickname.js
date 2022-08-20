@@ -47,7 +47,6 @@ const nicknameList = [
   "난공불락",
   "노트필기",
   "달콤짭짤",
-  "닭대가리",
   "도라에몽",
   "동그라미",
   "뒤뚱뒤뚱",
@@ -104,6 +103,7 @@ const nicknameList = [
   "효녀심청",
   "호동왕자",
   "혹등고래",
+  "큐티섹시",
 ];
 
 const nameForm = document.querySelector("#nameForm");
