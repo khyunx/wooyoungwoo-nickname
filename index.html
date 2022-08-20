@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="src/css/style.css" />
   <meta name="google-site-verification" content="oB3kMg8G1wM3df5VBHTl0cyc6h7lpDgnC59lf5yScBs" />
   <meta name="naver-site-verification" content="aad166d23d9242b83a96593987ec9dab63b31942" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="wrap">
@@ -16,7 +19,7 @@
     <form id="nameForm">
       <input type="text" placeholder="이름을 입력하고 시작하세요!" required/>
       <input id="submit" type="submit" value="나의 별명 보기 ✅"/>
-      <input class="hidden" id="submit" type="submit" value="다시 한번 하기 🐬"/>
+      <input class="hidden" id="submit" type="submit" value="다시 해보기 🐬"/>
     </form>
     <div id="result">
       <div id="yourNameIs"></div>
@@ -24,6 +27,7 @@
       <span id="nickname"></span>
       <span id="name"></span>
     </div>
+    <span id="copyright">© 2022. KyunghyunKang All rights reserved.</span>
   </div>
   <script src="src/js/nickname.js"></script> 
 </body>

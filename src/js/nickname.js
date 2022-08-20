@@ -69,13 +69,14 @@ const nicknameList = [
   "블링블링",
   "비타민씨",
   "안아줘요",
-  "해줘응애",
+  "마마보이",
   "새콤달콤",
   "살랑살랑",
   "성형미인",
   "소주한잔",
   "깡소주파",
-  "신데렐레",
+  "신데렐라",
+  "외뿔고래",
   "백설공주",
   "아침이슬",
   "알록달록",
@@ -102,6 +103,7 @@ const nicknameList = [
   "허리케인",
   "효녀심청",
   "호동왕자",
+  "혹등고래",
 ];
 
 const nameForm = document.querySelector("#nameForm");
@@ -112,39 +114,38 @@ const nicknameSpace = document.querySelector("#nickname");
 const nameSpace = document.querySelector("#name");
 const yourNameIs = document.querySelector("#yourNameIs");
 const countDown = document.querySelector("#countDown");
+let isSubmit = false;
 
 const makeNickName = (e) => {
   e.preventDefault();
-  if (nicknameSpace.innerText) {
-    yourNameIs.innerText = "";
-    nicknameSpace.innerText = "";
-    nameSpace.innerText = "";
-  }
-  const name = nameInput.value;
-  const nickname =
-    nicknameList[Math.floor(Math.random() * nicknameList.length)];
-  let time = 4;
-  const interval = setInterval(() => {
-    yourNameIs.innerText = "당신의 별명은!!";
-    time -= 1;
-    countDown.innerText = time;
-  }, 1000);
-  setTimeout(() => {
-    nicknameSpace.innerText = nickname;
-    nameSpace.innerText = name;
-    countDown.innerText = "";
-    if (retryBtn.classList.contains("hidden")) {
-      retryBtn.classList.remove("hidden");
-      submitBtn.classList.add("hidden");
+  if (!isSubmit) {
+    isSubmit = true;
+    if (nicknameSpace.innerText) {
+      yourNameIs.innerText = "";
+      nicknameSpace.innerText = "";
+      nameSpace.innerText = "";
     }
-    clearInterval(interval);
-  }, 4000);
-};
-
-const retrySubmit = (e) => {
-  e.preventDefault();
-
-  makeNickName();
+    const name = nameInput.value;
+    const nickname =
+      nicknameList[Math.floor(Math.random() * nicknameList.length)];
+    let time = 4;
+    const interval = setInterval(() => {
+      yourNameIs.innerText = "당신의 별명은!!";
+      time -= 1;
+      countDown.innerText = time;
+    }, 1000);
+    setTimeout(() => {
+      nicknameSpace.innerText = nickname;
+      nameSpace.innerText = name;
+      countDown.innerText = "";
+      if (retryBtn.classList.contains("hidden")) {
+        retryBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+      clearInterval(interval);
+      isSubmit = false;
+    }, 4000);
+  }
 };
 
 nameForm.addEventListener("submit", makeNickName);
