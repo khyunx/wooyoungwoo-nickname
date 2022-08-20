@@ -6,6 +6,7 @@
 
 ## 배포 URL
 
+[https://wooyoungwoo-nickname.netlify.app](https://wooyoungwoo-nickname.netlify.app)
 [https://mucent.github.io/wooyoungwoo-nickname](https://mucent.github.io/wooyoungwoo-nickname)
 
 ## 기능
