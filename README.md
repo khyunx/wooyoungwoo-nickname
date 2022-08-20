@@ -1,4 +1,4 @@
-# 우영우 닉네임 짓기
+# 우영우 별명 짓기
 
 ![첫화면](src/img/first.png)
 ![두번째](src/img/second.png)
